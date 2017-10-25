@@ -90,21 +90,10 @@ button {
   transition-duration:0s;
 }
 
-button a {
 
+button:hover {
 
-
-    text-decoration: none;
-    padding: 10px 30px;
-    background: linear-gradient(#f56e5d,#dc1d00);
-    color: #fff;
-    font-size: 1.5em;
-
-}
-
-button a:hover {
-
-  background: linear-gradient(#ed5643,#dc1d00);
+  background: linear-gradient(#f6f8f7,#ececec);
 
 }
 .menu_helper {
