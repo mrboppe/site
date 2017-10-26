@@ -2,14 +2,20 @@
 session_start();
 require('./connect.php');
 
+
 // hämta data
 $userinfo = $dbh->query('SELECT * FROM `accounts` WHERE `id`='.$dbh->quote($_REQUEST['id']))->fetch();
+$hej = getdate();
 ?>
 <div class="inner_container">
   <div id="img">
     <img id="avatar" src="/img/uploads/avtars/<?=$userinfo['avatar']?>"/>
     <p id="day"><?=ucfirst($userinfo['username'])?></p>
-    <p>Senast online: <?=date("Y-m-d H:i:s", $userinfo['day'])?></p>
+    <?php if(($hej[0] -= $userinfo['day']) < 90){?>
+       <p> Online just nu</p>
+    <?php }else { ?>
+      <p>Senast online: <?=date("Y-m-d H:i:s", $userinfo['day'])?></p>
+<?php } ?>
   </div>
   <div class="tab">
       <div class="tab_holder"><button class="btn profile_general" style="<?=($_SESSION['id'] != $_REQUEST['id']) ? 'display:inherit':'';?>">Allmänt</button></div><!--

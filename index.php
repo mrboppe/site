@@ -33,10 +33,10 @@ if(isset($_REQUEST['page']) && in_array($_REQUEST['page'], $pages)){
             <div id="top">
 
                   <div class="flags">
-                    <button type="button" name="button">
+                    <button class="flags" type="button" name="button">
                       <img src="./img/swe.png"/>
                     </button>
-                    <button id="activ" type="button" name="button">
+                    <button class="flags" id="activ" type="button" name="button">
                       <img src="./img/uk.png"/>
                     </button>
                   </div>
